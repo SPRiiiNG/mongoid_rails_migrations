@@ -145,11 +145,7 @@ module Mongoid #:nodoc
 
       def connection
         # ActiveRecord::Base.connection
-        if ::Mongoid.respond_to?(:default_client)
-          ::Mongoid.default_client
-        else
-          ::Mongoid.default_session
-        end
+        ::Mongoid.default_client
       end
 
       def method_missing(method, *arguments, &block)
